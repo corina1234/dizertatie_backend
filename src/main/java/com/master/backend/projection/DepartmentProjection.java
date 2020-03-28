@@ -3,6 +3,7 @@ package com.master.backend.projection;
 import com.master.backend.entities.Department;
 import com.master.backend.entities.Employee;
 import com.master.backend.entities.Floor;
+import com.master.backend.entities.OfficesRoom;
 import org.springframework.data.rest.core.config.Projection;
 
 import java.util.Date;
@@ -13,6 +14,6 @@ public interface DepartmentProjection {
     public long getId();
     public String getName();
     public List<Employee> getEmployees();
-    public Floor getFloor();
     public String getCode();
+    public OfficesRoomProjection getOfficesRoom();
 }

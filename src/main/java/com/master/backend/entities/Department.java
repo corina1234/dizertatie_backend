@@ -33,8 +33,8 @@ public class Department {
     @OneToMany(mappedBy = "department")
     private List<Employee> employees;
 
-    @ManyToOne
-    private Floor floor;
+    @OneToOne
+    private OfficesRoom officesRoom;
 
     public long getId() {
         return id;
@@ -76,19 +76,19 @@ public class Department {
         this.employees = employees;
     }
 
-    public Floor getFloor() {
-        return floor;
-    }
-
-    public void setFloor(Floor floor) {
-        this.floor = floor;
-    }
-
     public String getCode() {
         return code;
     }
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public OfficesRoom getOfficesRoom() {
+        return officesRoom;
+    }
+
+    public void setOfficesRoom(OfficesRoom officesRoom) {
+        this.officesRoom = officesRoom;
     }
 }

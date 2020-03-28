@@ -28,9 +28,6 @@ public class Floor {
     private Date updatedAt;
 
     @OneToMany(mappedBy = "floor")
-    private List<Department> departments;
-
-    @OneToMany(mappedBy = "floor")
     private List<MeetingRoom> meetingRooms;
 
     @OneToMany(mappedBy = "floor")
@@ -66,14 +63,6 @@ public class Floor {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public List<Department> getDepartments() {
-        return departments;
-    }
-
-    public void setDepartments(List<Department> departments) {
-        this.departments = departments;
     }
 
     public List<MeetingRoom> getMeetingRooms() {

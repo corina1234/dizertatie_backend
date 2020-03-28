@@ -39,6 +39,11 @@ public class OfficesRoom {
     @OneToMany(mappedBy = "officesRoom")
     private List<Office> offices;
 
+    @OneToOne(mappedBy = "officesRoom")
+    private Department department;
+
+    private String coordinates;
+
     public long getId() {
         return id;
     }
@@ -93,5 +98,21 @@ public class OfficesRoom {
 
     public void setOffices(List<Office> offices) {
         this.offices = offices;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public String getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
     }
 }

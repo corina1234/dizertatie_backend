@@ -81,67 +81,6 @@ public class DataLoader implements ApplicationRunner {
         etaj2.setName("Etaj 2");
         floorRepository.save(etaj2);
 
-        //departments
-        Department developers = new Department();
-        developers.setCode("Dev-01-Buc");
-        developers.setName("Development & Consulting 1");
-        developers.setFloor(parter);
-        departmentRepository.save(developers);
-
-        Department productie = new Department();
-        productie.setCode("Prod-0X-Buc");
-        productie.setName("Productie");
-        productie.setFloor(parter);
-        departmentRepository.save(productie);
-
-        Department developers2 = new Department();
-        developers2.setCode("Dev-02-Buc");
-        developers2.setName("Development & Consulting 2");
-        developers2.setFloor(etaj1);
-        departmentRepository.save(developers2);
-
-        Department consulting = new Department();
-        consulting.setCode("Cons-0X-Buc");
-        consulting.setName("Consultanta");
-        consulting.setFloor(etaj1);
-        departmentRepository.save(consulting);
-
-        Department hrDep = new Department();
-        hrDep.setCode("HR-0X-Buc");
-        hrDep.setName("Human Resources");
-        hrDep.setFloor(etaj2);
-        departmentRepository.save(hrDep);
-
-        Department accounting = new Department();
-        accounting.setCode("Conta-0X-Buc");
-        accounting.setName("Contabilitate");
-        accounting.setFloor(etaj2);
-        departmentRepository.save(accounting);
-
-        Department financiar = new Department();
-        financiar.setCode("Fin-0X-Buc");
-        financiar.setName("Financiar");
-        financiar.setFloor(etaj2);
-        departmentRepository.save(financiar);
-
-        Department marketing = new Department();
-        marketing.setCode("Mrk-0X-Buc");
-        marketing.setName("Marketing");
-        marketing.setFloor(etaj2);
-        departmentRepository.save(marketing);
-
-        Department procurement = new Department();
-        procurement.setCode("Prc-0X-Buc");
-        procurement.setName("Procurement");
-        procurement.setFloor(etaj2);
-        departmentRepository.save(procurement);
-
-        Department vanzari = new Department();
-        vanzari.setCode("Vnz-0X-Buc");
-        vanzari.setName("Vanzari");
-        vanzari.setFloor(etaj2);
-        departmentRepository.save(vanzari);
-
         //meeting rooms
         MeetingRoom mr01 = new MeetingRoom();
         mr01.setCodeId("MR-01");
@@ -214,67 +153,145 @@ public class DataLoader implements ApplicationRunner {
         officesRoom1.setName("Open Space 1");
         officesRoom1.setFloor(parter);
         officesRoom1.setType(OfficesRoomType.OPEN_SPACE);
+        officesRoom1.setCoordinates("400, 400");
         officesRoomRepository.save(officesRoom1);
 
         OfficesRoom officesRoom2 = new OfficesRoom();
         officesRoom2.setName("Open Space 2");
         officesRoom2.setFloor(etaj1);
         officesRoom2.setType(OfficesRoomType.OPEN_SPACE);
+        officesRoom2.setCoordinates("400, 400");
         officesRoomRepository.save(officesRoom2);
 
         OfficesRoom officesRoom3 = new OfficesRoom();
         officesRoom3.setName("Open Space 3");
         officesRoom3.setFloor(etaj1);
         officesRoom3.setType(OfficesRoomType.OPEN_SPACE);
+        officesRoom3.setCoordinates("850, 400");
         officesRoomRepository.save(officesRoom3);
 
         OfficesRoom officesRoom4 = new OfficesRoom();
         officesRoom4.setName("Open Space 4");
         officesRoom4.setFloor(etaj2);
         officesRoom4.setType(OfficesRoomType.OPEN_SPACE);
+        officesRoom4.setCoordinates("400, 400");
         officesRoomRepository.save(officesRoom4);
 
         OfficesRoom smallRoom1 = new OfficesRoom();
         smallRoom1.setName("SR-01");
         smallRoom1.setFloor(parter);
         smallRoom1.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom1.setCoordinates("650, 550");
         officesRoomRepository.save(smallRoom1);
 
         OfficesRoom smallRoom2 = new OfficesRoom();
         smallRoom2.setName("SR-02");
         smallRoom2.setFloor(parter);
         smallRoom2.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom2.setCoordinates("850, 550");
         officesRoomRepository.save(smallRoom2);
 
         OfficesRoom smallRoom3 = new OfficesRoom();
         smallRoom3.setName("SR-03");
         smallRoom3.setFloor(etaj2);
         smallRoom3.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom3.setCoordinates("650, 550");
         officesRoomRepository.save(smallRoom3);
 
         OfficesRoom smallRoom4 = new OfficesRoom();
         smallRoom4.setName("SR-04");
         smallRoom4.setFloor(etaj2);
         smallRoom4.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom4.setCoordinates("750, 550");
         officesRoomRepository.save(smallRoom4);
 
         OfficesRoom smallRoom5 = new OfficesRoom();
         smallRoom5.setName("SR-05");
         smallRoom5.setFloor(etaj2);
         smallRoom5.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom5.setCoordinates("850, 550");
         officesRoomRepository.save(smallRoom5);
 
         OfficesRoom smallRoom6 = new OfficesRoom();
         smallRoom6.setName("SR-06");
         smallRoom6.setFloor(etaj2);
         smallRoom6.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom6.setCoordinates("650, 400");
         officesRoomRepository.save(smallRoom6);
 
         OfficesRoom smallRoom7 = new OfficesRoom();
         smallRoom7.setName("SR-07");
         smallRoom7.setFloor(etaj2);
         smallRoom7.setType(OfficesRoomType.SMALL_ROOM);
+        smallRoom7.setCoordinates("750, 400");
         officesRoomRepository.save(smallRoom7);
+
+        //departments
+        Department developers = new Department();
+        developers.setCode("Dev-01-Buc");
+        developers.setName("Development & Consulting 1");
+        developers.setOfficesRoom(officesRoom1);
+        departmentRepository.save(developers);
+
+        Department productie = new Department();
+        productie.setCode("Prod-0X-Buc");
+        productie.setName("Productie");
+        productie.setOfficesRoom(smallRoom2);
+        departmentRepository.save(productie);
+
+        Department developers2 = new Department();
+        developers2.setCode("Dev-02-Buc");
+        developers2.setName("Development & Consulting 2");
+        developers2.setOfficesRoom(officesRoom2);
+        departmentRepository.save(developers2);
+
+        Department consulting = new Department();
+        consulting.setCode("Cons-01-Buc");
+        consulting.setName("Consultanta 1");
+        consulting.setOfficesRoom(officesRoom3);
+        departmentRepository.save(consulting);
+
+        Department hrDep = new Department();
+        hrDep.setCode("HR-0X-Buc");
+        hrDep.setName("Human Resources");
+        hrDep.setOfficesRoom(smallRoom4);
+        departmentRepository.save(hrDep);
+
+        Department accounting = new Department();
+        accounting.setCode("Conta-0X-Buc");
+        accounting.setName("Contabilitate");
+        accounting.setOfficesRoom(smallRoom7);
+        departmentRepository.save(accounting);
+
+        Department financiar = new Department();
+        financiar.setCode("Fin-0X-Buc");
+        financiar.setName("Financiar");
+        financiar.setOfficesRoom(smallRoom6);
+        departmentRepository.save(financiar);
+
+        Department marketing = new Department();
+        marketing.setCode("Mrk-0X-Buc");
+        marketing.setName("Marketing");
+        marketing.setOfficesRoom(smallRoom3);
+        departmentRepository.save(marketing);
+
+        Department procurement = new Department();
+        procurement.setCode("Prc-0X-Buc");
+        procurement.setName("Procurement");
+        procurement.setOfficesRoom(smallRoom1);
+        departmentRepository.save(procurement);
+
+        Department vanzari = new Department();
+        vanzari.setCode("Vnz-0X-Buc");
+        vanzari.setName("Vanzari");
+        vanzari.setOfficesRoom(smallRoom5);
+        departmentRepository.save(vanzari);
+
+        Department consultanta2 = new Department();
+        consultanta2.setCode("Cons-01-Buc");
+        consultanta2.setName("Consultanta 2");
+        consultanta2.setOfficesRoom(officesRoom4);
+        departmentRepository.save(consultanta2);
 
         //offices
         //TODO: add more offices
