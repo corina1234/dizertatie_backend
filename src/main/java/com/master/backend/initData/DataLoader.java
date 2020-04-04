@@ -1,7 +1,6 @@
 package com.master.backend.initData;
 
 import com.master.backend.entities.*;
-import com.master.backend.enums.Availability;
 import com.master.backend.enums.OfficesRoomType;
 import com.master.backend.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,17 +84,13 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr01 = new MeetingRoom();
         mr01.setCodeId("MR-01");
         mr01.setName("Roma");
-        mr01.setAvailability(Availability.AVAILABLE);
         mr01.setFloor(etaj1);
         mr01.setMaxNoPersons(2);
-        mr01.setLocationCoordinates("0,0,18%,17%");
-        mr01.setDoorCoordinates("M70 -15 50 -15A70 70 0 0 1 70 -25Z");
         meetingRoomRepository.save(mr01);
 
         MeetingRoom mr02 = new MeetingRoom();
         mr02.setCodeId("MR-02");
         mr02.setName("Madrid");
-        mr02.setAvailability(Availability.AVAILABLE);
         mr02.setFloor(etaj1);
         mr02.setMaxNoPersons(5);
         meetingRoomRepository.save(mr02);
@@ -103,7 +98,6 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr03 = new MeetingRoom();
         mr03.setCodeId("MR-03");
         mr03.setName("Istanbul");
-        mr03.setAvailability(Availability.AVAILABLE);
         mr03.setFloor(etaj1);
         mr03.setMaxNoPersons(10);
         meetingRoomRepository.save(mr03);
@@ -111,7 +105,6 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr04 = new MeetingRoom();
         mr04.setCodeId("MR-04");
         mr04.setName("New York");
-        mr04.setAvailability(Availability.BUSY);
         mr04.setFloor(etaj1);
         mr04.setMaxNoPersons(4);
         meetingRoomRepository.save(mr04);
@@ -119,7 +112,6 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr05 = new MeetingRoom();
         mr05.setCodeId("MR-05");
         mr05.setName("Amsterdam");
-        mr05.setAvailability(Availability.BUSY);
         mr05.setFloor(etaj1);
         mr05.setMaxNoPersons(10);
         meetingRoomRepository.save(mr05);
@@ -127,7 +119,6 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr06 = new MeetingRoom();
         mr06.setCodeId("MR-06");
         mr06.setName("Sydney");
-        mr06.setAvailability(Availability.AVAILABLE);
         mr06.setFloor(etaj2);
         mr06.setMaxNoPersons(5);
         meetingRoomRepository.save(mr06);
@@ -135,7 +126,6 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr07 = new MeetingRoom();
         mr07.setCodeId("MR-07");
         mr07.setName("Londra");
-        mr07.setAvailability(Availability.AVAILABLE);
         mr07.setFloor(etaj2);
         mr07.setMaxNoPersons(10);
         meetingRoomRepository.save(mr07);
@@ -143,7 +133,6 @@ public class DataLoader implements ApplicationRunner {
         MeetingRoom mr08 = new MeetingRoom();
         mr08.setCodeId("MR-08");
         mr08.setName("Barcelona");
-        mr08.setAvailability(Availability.BUSY);
         mr08.setFloor(etaj2);
         mr08.setMaxNoPersons(10);
         meetingRoomRepository.save(mr08);

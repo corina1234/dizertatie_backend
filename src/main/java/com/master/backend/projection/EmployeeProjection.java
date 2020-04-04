@@ -17,7 +17,7 @@ public interface EmployeeProjection {
     String getPhoneNumber();
     Date getDateOfEmployment();
     Job getJob();
-    Department getDepartment();
+    DepartamentForEmployeeProjection getDepartment();
     Office getOffice();
     Employee getManager();
     List<Employee> getEmployees();
