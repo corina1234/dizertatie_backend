@@ -1,6 +1,6 @@
 package com.master.backend.entities;
 
-import com.master.backend.enums.Availability;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @DynamicUpdate
@@ -24,23 +25,20 @@ public class MeetingRoom {
     private String name;
 
     @CreationTimestamp
-    @Column(name="created_at", updatable=false)
+    @Column(name = "created_at", updatable = false)
     private Date createdAt;
 
     @UpdateTimestamp
     private Date updatedAt;
 
-    @Enumerated(EnumType.STRING)
-    private Availability availability;
-
     private Integer maxNoPersons;
 
-    private String locationCoordinates;
-
-    private String doorCoordinates;
-
     @ManyToOne
+    @JsonIgnoreProperties({"officesRooms","meetingRooms"})
     private Floor floor;
+
+    @OneToMany(mappedBy = "meetingRoom", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Booking> bookings;
 
     public long getId() {
         return id;
@@ -82,14 +80,6 @@ public class MeetingRoom {
         this.updatedAt = updatedAt;
     }
 
-    public Availability getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(Availability availability) {
-        this.availability = availability;
-    }
-
     public Integer getMaxNoPersons() {
         return maxNoPersons;
     }
@@ -106,19 +96,11 @@ public class MeetingRoom {
         this.floor = floor;
     }
 
-    public String getLocationCoordinates() {
-        return locationCoordinates;
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-    public void setLocationCoordinates(String locationCoordinates) {
-        this.locationCoordinates = locationCoordinates;
-    }
-
-    public String getDoorCoordinates() {
-        return doorCoordinates;
-    }
-
-    public void setDoorCoordinates(String doorCoordinates) {
-        this.doorCoordinates = doorCoordinates;
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 }
