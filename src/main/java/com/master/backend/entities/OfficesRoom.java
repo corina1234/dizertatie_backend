@@ -1,6 +1,5 @@
 package com.master.backend.entities;
 
-import com.master.backend.enums.Availability;
 import com.master.backend.enums.OfficesRoomType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
