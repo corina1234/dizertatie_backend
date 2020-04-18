@@ -12,4 +12,6 @@ import java.util.List;
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
 
     List<Department> findAllByNameContaining(String name);
+
+    Department findByCode(String code);
 }
