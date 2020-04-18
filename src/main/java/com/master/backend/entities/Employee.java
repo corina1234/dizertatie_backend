@@ -1,5 +1,6 @@
 package com.master.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @DynamicUpdate
@@ -19,6 +21,8 @@ public class Employee {
 
     @NotNull
     private String name;
+
+    private String password;
 
     @NotNull
     private String email;
@@ -36,22 +40,27 @@ public class Employee {
     private Date updatedAt;
 
     @ManyToOne
+    @JsonIgnoreProperties("employees")
     private Job job;
 
     @ManyToOne
+    @JsonIgnoreProperties({"employees","officesRoom"})
     private Department department;
 
     @OneToOne
     @JoinColumn(name = "office_id")
+    @JsonIgnoreProperties({"employee", "officesRoom"})
     private Office office;
 
     @ManyToOne
+    @JsonIgnoreProperties("employees")
     private Employee manager;
 
     @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Employee> employees;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"employee", "meetingRoom"})
     private List<Booking> bookings;
 
     public long getId() {
@@ -156,5 +165,13 @@ public class Employee {
 
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
