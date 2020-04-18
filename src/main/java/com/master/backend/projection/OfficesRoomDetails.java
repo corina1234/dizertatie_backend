@@ -14,7 +14,11 @@ public interface OfficesRoomDetails {
     long getId();
     public String getName();
     public OfficesRoomType getType();
-    public List<Office> getOffices();
+    public List<OfficeDetails> getOffices();
     public Department getDepartment();
     public String getCoordinates();
+    public String getX();
+    public String getY();
+    public String getWidth() ;
+    public String getHeight();
 }
