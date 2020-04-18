@@ -1,5 +1,6 @@
 package com.master.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -24,11 +25,14 @@ public class Booking {
     @UpdateTimestamp
     private Date updatedAt;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date bookedFrom;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date bookedUntil;
 
     @ManyToOne
+    @JsonIgnoreProperties("job")
     private Employee employee;
 
     @ManyToOne

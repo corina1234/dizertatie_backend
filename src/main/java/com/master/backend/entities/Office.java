@@ -32,6 +32,14 @@ public class Office {
     @ManyToOne
     private OfficesRoom officesRoom;
 
+    private String x;
+
+    private String y;
+
+    private String width;
+
+    private String height;
+
     public long getId() {
         return id;
     }
@@ -78,5 +86,37 @@ public class Office {
 
     public void setOfficesRoom(OfficesRoom officesRoom) {
         this.officesRoom = officesRoom;
+    }
+
+    public String getX() {
+        return x;
+    }
+
+    public void setX(String x) {
+        this.x = x;
+    }
+
+    public String getY() {
+        return y;
+    }
+
+    public void setY(String y) {
+        this.y = y;
+    }
+
+    public String getWidth() {
+        return width;
+    }
+
+    public void setWidth(String width) {
+        this.width = width;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
     }
 }
