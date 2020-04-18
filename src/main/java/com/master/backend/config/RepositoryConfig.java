@@ -15,6 +15,9 @@ public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
                 .addProjection(OfficesRoomDetails.class)
                 .addProjection(OfficesRoomProjection.class)
                 .addProjection(OfficeDropDown.class)
+                .addProjection(MeetingRoomDetails.class)
+                .addProjection(BookingGeneral.class)
+                .addProjection(EmployeeList.class)
                 .addProjection(EmployeeProjection.class);
     }
 }
