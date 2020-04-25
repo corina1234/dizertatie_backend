@@ -1,4 +1,4 @@
-package com.master.backend.controllers;
+package com.master.backend.restControllers;
 
 import com.master.backend.entities.Booking;
 import com.master.backend.projection.BookingGeneral;
