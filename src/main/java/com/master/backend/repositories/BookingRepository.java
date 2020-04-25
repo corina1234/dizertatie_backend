@@ -18,4 +18,6 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     @Query("SELECT b FROM Booking b left join b.meetingRoom m WHERE m.id = :roomId and (b.bookedFrom between :startDate and :endDate or b.bookedUntil between :startDate and :endDate)")
     List<BookingGeneral> getBookingBusy(long roomId, Date startDate,  Date endDate);
+
+    List<Booking> getBookingByEmployee_IdAndIsSavedGoogleFalse(long id);
 }

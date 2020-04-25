@@ -54,11 +54,14 @@
 			<version>v3-rev224-1.22.0</version>
 		</dependency>
 
-		<!-- Gmail Maven Dependency-->
 		<dependency>
-			<groupId>com.google.apis</groupId>
-			<artifactId>google-api-services-gmail</artifactId>
-			<version>v1-rev65-1.18.0-rc</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+			<version>3.0.4.RELEASE</version>
 		</dependency>
 	</dependencies>
 
