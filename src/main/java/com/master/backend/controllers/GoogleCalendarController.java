@@ -25,6 +25,7 @@ import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -119,11 +120,15 @@ public class GoogleCalendarController {
                     .setTimeZone("GMT+03:00");
             event.setEnd(end);
 
-//        EventAttendee[] attendees = new EventAttendee[] {
-//                new EventAttendee().setEmail("lpage@example.com"),
-//                new EventAttendee().setEmail("sbrin@example.com"),
-//        };
-//        event.setAttendees(Arrays.asList(attendees));
+            if(!StringUtils.isEmpty(booking.getAttendees())){
+                String[] attendeesString = booking.getAttendees().split(",");
+                EventAttendee[] attendees = new EventAttendee[attendeesString.length];
+                for(int i = 0; i < attendeesString.length; i++){
+                    attendees[i] = new EventAttendee().setEmail(attendeesString[i]);
+
+                }
+                event.setAttendees(Arrays.asList(attendees));
+            }
 
             String calendarId = "primary";
             event = client.events().insert(calendarId, event).execute();
