@@ -35,8 +35,12 @@ public class Booking {
     @JsonIgnoreProperties("job")
     private Employee employee;
 
+    private String attendees;
+
     @ManyToOne
     private MeetingRoom meetingRoom;
+
+    private boolean isSavedGoogle;
 
     public long getId() {
         return id;
@@ -100,5 +104,21 @@ public class Booking {
 
     public void setMeetingRoom(MeetingRoom meetingRoom) {
         this.meetingRoom = meetingRoom;
+    }
+
+    public boolean isSavedGoogle() {
+        return isSavedGoogle;
+    }
+
+    public void setSavedGoogle(boolean savedGoogle) {
+        isSavedGoogle = savedGoogle;
+    }
+
+    public String getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(String attendees) {
+        this.attendees = attendees;
     }
 }
