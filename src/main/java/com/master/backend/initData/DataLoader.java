@@ -445,10 +445,11 @@ public class DataLoader implements ApplicationRunner {
             }
         }
 
+        int index = 0;
         for(int i = 0; i < 8; i++){
             for(int j = 0; j < 5; j++){
                 Office sr1_o1 = new Office();
-                sr1_o1.setName("OS1-0" + (i+1));
+                sr1_o1.setName("OS1-0" + ++index);
                 sr1_o1.setOfficesRoom(officesRoom1);
                 sr1_o1.setX(setCoordinate(officesRoom1.getX(), officesRoom1.getWidth(), 16, (j+1) + j*2));
                 sr1_o1.setY(setCoordinate(officesRoom1.getY(), officesRoom1.getHeight(), 25, (i+1) + i*2));
@@ -458,10 +459,11 @@ public class DataLoader implements ApplicationRunner {
             }
         }
 
+        index = 0;
         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 5; j++){
                 Office sr1_o1 = new Office();
-                sr1_o1.setName("OS2-0" + (i+1));
+                sr1_o1.setName("OS2-0" + ++index);
                 sr1_o1.setOfficesRoom(officesRoom2);
                 sr1_o1.setX(setCoordinate(officesRoom2.getX(), officesRoom2.getWidth(), 16, (j+1) + j*2));
                 sr1_o1.setY(setCoordinate(officesRoom2.getY(), officesRoom2.getHeight(), 19, (i+1) + i*2));
@@ -471,10 +473,11 @@ public class DataLoader implements ApplicationRunner {
             }
         }
 
+        index = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 Office sr1_o1 = new Office();
-                sr1_o1.setName("OS3-0" + (i+1));
+                sr1_o1.setName("OS3-0" + ++index);
                 sr1_o1.setOfficesRoom(officesRoom3);
                 sr1_o1.setX(setCoordinate(officesRoom3.getX(), officesRoom3.getWidth(), 13, (j+1) + j*2));
                 sr1_o1.setY(setCoordinate(officesRoom3.getY(), officesRoom3.getHeight(), 13, (i+1) + i*2));
@@ -484,10 +487,11 @@ public class DataLoader implements ApplicationRunner {
             }
         }
 
+        index = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 5; j++){
                 Office sr1_o1 = new Office();
-                sr1_o1.setName("OS4-0" + (i+1));
+                sr1_o1.setName("OS4-0" + ++index);
                 sr1_o1.setOfficesRoom(officesRoom4);
                 sr1_o1.setX(setCoordinate(officesRoom4.getX(), officesRoom4.getWidth(), 16, (j+1) + j*2));
                 sr1_o1.setY(setCoordinate(officesRoom4.getY(), officesRoom4.getHeight(), 13, (i+1) + i*2));
@@ -1115,8 +1119,8 @@ public class DataLoader implements ApplicationRunner {
         employeeRepository.save(dev1_3);
 
         Employee dev1_4 = new Employee();
-        dev1_4.setName("Ravariu Rares");
-        dev1_4.setEmail("rares.ravariu@yahoo.com");
+        dev1_4.setName("Strachinariu Corina");
+        dev1_4.setEmail("corina.strachinariu@test.com");
         dev1_4.setPhoneNumber("+407555511");
         calendar.set(2017,5,15);
         dev1_4.setDateOfEmployment(calendar.getTime());

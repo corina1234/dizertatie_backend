@@ -45,6 +45,7 @@
                 <button class="btn btn-success" type="submit">Salvare Google Calendars</button>
             </form>
         </div>
+        <div th:if="${#lists.isEmpty(rezervari)}">Nici o rezervare noua</div>
     </div>
 
 </div>
