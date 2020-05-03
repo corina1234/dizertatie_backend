@@ -75,7 +75,8 @@ public class GoogleCalendarController {
             client = new Calendar.Builder(httpTransport, JSON_FACTORY, credential)
                     .setApplicationName(APPLICATION_NAME).build();
             Optional<User> user = userRepository.findById(1L);
-            List<Booking> bookings = user.isPresent() ? bookingRepository.getBookingByEmployee_IdAndIsSavedGoogleFalse(user.get().getUserLoggedInId()) : new ArrayList<>();
+            List<Booking> bookings = user.isPresent() ? bookingRepository.getBookingByEmployee_IdAndIsSavedGoogleFalse(
+                    user.get().getUserLoggedInId()) : new ArrayList<>();
             createEvent(bookings);
         } catch (Exception e) {
             logger.warn("Exception while handling OAuth2 callback (" + e.getMessage() + ")."
